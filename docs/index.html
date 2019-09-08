@@ -1,0 +1,342 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<head>
+    <title>debugkit Documentation</title>
+    <link rel="stylesheet" href="ldoc.css" type="text/css" />
+</head>
+<body>
+
+<div id="container">
+
+<div id="product">
+	<div id="product_logo"></div>
+	<div id="product_name"><big><b></b></big></div>
+	<div id="product_description"></div>
+</div> <!-- id="product" -->
+
+
+<div id="main">
+
+
+<!-- Menu -->
+
+<div id="navigation">
+<br/>
+<h1>debugkit</h1>
+
+
+<h2>Contents</h2>
+<ul>
+<li><a href="#Functions">Functions</a></li>
+<li><a href="#Tables">Tables</a></li>
+</ul>
+
+
+<h2>Modules</h2>
+<ul class="nowrap">
+  <li><strong>init</strong></li>
+</ul>
+
+</div>
+
+<div id="content">
+
+<h1>Module <code>init</code></h1>
+<p>Print debugging module</p>
+<p>
+
+</p>
+    <h3>Info:</h3>
+    <ul>
+        <li><strong>Author</strong>: daelvn</li>
+    </ul>
+
+
+<h2><a href="#Functions">Functions</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#mapM">mapM (f, ...)</a></td>
+	<td class="summary">A map function with varargs.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#doInstant">doInstant ()</a></td>
+	<td class="summary">Sets instant printing (no virtual buffer) for stdout.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#finspect">finspect (inspect, filter, depth, ...)</a></td>
+	<td class="summary">Custom inspect functions with filters.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fprint">fprint (filter, ...)</a></td>
+	<td class="summary">Filtered print.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#filterKeywords">filterKeywords (keywords, any)</a></td>
+	<td class="summary">Matches a keyword list in a value.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#fsprint">fsprint (keywords, ...)</a></td>
+	<td class="summary">Special case of <a href="index.html#fprint">fprint</a>.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#cfsprint">cfsprint (f, keywords, ...)</a></td>
+	<td class="summary">Composable <a href="index.html#fsprint">fsprint</a>, to combine with other filtering functions.</td>
+	</tr>
+	<tr>
+	<td class="name" nowrap><a href="#color">color (format, ...)</a></td>
+	<td class="summary">Custom color formatting function over ansicolors.</td>
+	</tr>
+</table>
+<h2><a href="#Tables">Tables</a></h2>
+<table class="function_list">
+	<tr>
+	<td class="name" nowrap><a href="#colorall">colorall</a></td>
+	<td class="summary">Table with functions to format entire strings.</td>
+	</tr>
+</table>
+
+<br/>
+<br/>
+
+
+    <h2 class="section-header "><a name="Functions"></a>Functions</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "mapM"></a>
+    <strong>mapM (f, ...)</strong>
+    </dt>
+    <dd>
+    A map function with varargs.  <strong>Curried function.</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">f</span>
+            <span class="types"><span class="type">function</span></span>
+         Transforming function.
+        </li>
+        <li><span class="parameter">...</span>
+         Variables to map.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        ... Variables applied to f.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "doInstant"></a>
+    <strong>doInstant ()</strong>
+    </dt>
+    <dd>
+    Sets instant printing (no virtual buffer) for stdout.
+
+
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "finspect"></a>
+    <strong>finspect (inspect, filter, depth, ...)</strong>
+    </dt>
+    <dd>
+    Custom inspect functions with filters.  <strong>Curried function.</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">inspect</span>
+            <span class="types"><span class="type">function</span></span>
+         <a href="https://github.com/kikito/inspect.lua">Inspect</a> function.
+        </li>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         Filter function.
+        </li>
+        <li><span class="parameter">depth</span>
+            <span class="types"><span class="type">number</span></span>
+         Depth of the table.
+        </li>
+        <li><span class="parameter">...</span>
+         Variables to inspect.
+        </li>
+    </ul>
+
+    <h3>Returns:</h3>
+    <ol>
+
+        ... Inspected variables.
+    </ol>
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fprint"></a>
+    <strong>fprint (filter, ...)</strong>
+    </dt>
+    <dd>
+    Filtered print.  Will not print if the string does not pass the filter.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">filter</span>
+            <span class="types"><span class="type">function</span></span>
+         Filter function.
+        </li>
+        <li><span class="parameter">...</span>
+         Variables to filter and print.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "filterKeywords"></a>
+    <strong>filterKeywords (keywords, any)</strong>
+    </dt>
+    <dd>
+    Matches a keyword list in a value.  <strong>Curried function.</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keywords</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Keyword list.
+        </li>
+        <li><span class="parameter">any</span>
+         Value to be checked.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "fsprint"></a>
+    <strong>fsprint (keywords, ...)</strong>
+    </dt>
+    <dd>
+    Special case of <a href="index.html#fprint">fprint</a>.  Gets a list of keywords and won't print anything if at least one of the keywords appears in
+ a string. <strong>Curried function.</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">keywords</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Keyword list.
+        </li>
+        <li><span class="parameter">...</span>
+         Variables to filter and print.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "cfsprint"></a>
+    <strong>cfsprint (f, keywords, ...)</strong>
+    </dt>
+    <dd>
+    Composable <a href="index.html#fsprint">fsprint</a>, to combine with other filtering functions.
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">f</span>
+            <span class="types"><span class="type">function</span></span>
+         Function to compose <a href="index.html#filterKeywords">filterKeywords</a> with.
+        </li>
+        <li><span class="parameter">keywords</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         Keyword list.
+        </li>
+        <li><span class="parameter">...</span>
+         Variables to filter and print.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+    <dt>
+    <a name = "color"></a>
+    <strong>color (format, ...)</strong>
+    </dt>
+    <dd>
+    Custom color formatting function over ansicolors.  <strong>Curried function.</strong>
+
+
+    <h3>Parameters:</h3>
+    <ul>
+        <li><span class="parameter">format</span>
+            <span class="types"><a class="type" href="https://www.lua.org/manual/5.3/manual.html#6.6">table</a></span>
+         A table where the keys are substrings to color, and values are the format.
+        </li>
+        <li><span class="parameter">...</span>
+         Strings to color.
+        </li>
+    </ul>
+
+
+
+
+
+</dd>
+</dl>
+    <h2 class="section-header "><a name="Tables"></a>Tables</h2>
+
+    <dl class="function">
+    <dt>
+    <a name = "colorall"></a>
+    <strong>colorall</strong>
+    </dt>
+    <dd>
+    Table with functions to format entire strings.
+ Shares fields with <a href="https://github.com/kikito/ansicolors.lua">ansicolors</a>' formatting options. So colorall.red becomes <code>(x) -&gt; color (&quot;%{red}&quot; .. x)</code>
+
+
+
+
+
+
+
+</dd>
+</dl>
+
+
+</div> <!-- id="content" -->
+</div> <!-- id="main" -->
+<div id="about">
+<i>generated by <a href="http://github.com/stevedonovan/LDoc">LDoc 1.4.6</a></i>
+<i style="float:right;">Last updated 2019-09-08 05:09:19 </i>
+</div> <!-- id="about" -->
+</div> <!-- id="container" -->
+</body>
+</html>
