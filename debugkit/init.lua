@@ -71,20 +71,23 @@ filterKeywords = function(keywords)
   end
 end
 local fsprint
-fsprint = function(keywords, f)
+fsprint = function(keywords, f, g)
   if f == nil then
     f = filterKeywords
   end
+  if g == nil then
+    g = (function(...)
+      return ...
+    end)
+  end
   return function(...)
-    return (fprint(f(keywords)))(...)
+    return (fprint(f(keywords)))(g(...))
   end
 end
 local cfsprint
 cfsprint = function(f)
   return function(keywords)
-    return fsprint(keywords, function(x)
-      return filterKeywords(f(x))
-    end)
+    return fsprint(keywords, filterKeywords, f)
   end
 end
 local c = require("ansicolors")

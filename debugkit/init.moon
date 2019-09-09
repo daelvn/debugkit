@@ -43,13 +43,13 @@ filterKeywords = (keywords) -> (any) ->
 -- a string. **Curried function.**
 -- @tparam table keywords Keyword list.
 -- @param ... Variables to filter and print.
-fsprint = (keywords, f=filterKeywords) -> (...) -> (fprint f keywords) ...
+fsprint = (keywords, f=filterKeywords, g=((...)->...)) -> (...) -> (fprint f keywords) g ...
 
 --- Composable `fsprint`, to combine with other filtering functions.
 -- @tparam function f Function to compose `filterKeywords` with.
 -- @tparam table keywords Keyword list.
 -- @param ... Variables to filter and print.
-cfsprint = (f) -> (keywords) -> fsprint keywords, (x) -> filterKeywords f x
+cfsprint = (f) -> (keywords) -> fsprint keywords, filterKeywords, f
 
 c      = require "ansicolors"
 _color = (t) -> (x) ->
