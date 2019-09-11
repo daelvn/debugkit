@@ -14,5 +14,3 @@ build = {
   type = "builtin",
   copy_directories = { "docs",  },
   modules = { ["debugkit.init"] = "debugkit/init.lua", },
-}
-}
