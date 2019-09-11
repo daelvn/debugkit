@@ -79,5 +79,5 @@ return (bool) -> bool and MODULE or {
   fsprint:        id
   cfsprint:       id
   color:          id
-  colorall:       id
+  colorall:       setmetatable {}, __call: id, __index: => id
 }

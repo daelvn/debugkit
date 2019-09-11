@@ -138,6 +138,11 @@ return function(bool)
     fsprint = id,
     cfsprint = id,
     color = id,
-    colorall = id
+    colorall = setmetatable({ }, {
+      __call = id,
+      __index = function(self)
+        return id
+      end
+    })
   }
 end
