@@ -1,5 +1,5 @@
 package = "debugkit"
-version = "1.2.2"
+version = "1.2.2-1"
 description = {
   summary = "A wrapper around inspect.lua and ansicolors.lua to make debugging easier.",
   detailed = [[debugkit provides functions that make processes such as the usual print debugging easier, along with filtering and coloring]],
