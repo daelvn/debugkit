@@ -68,16 +68,17 @@ colorall = setmetatable {}, __index: (i) => (x) -> c ("%{#{i}}" .. x)
 
 MODULE = { :mapM, :doInstant, :finspect, :fprint, :filterKeywords, :fsprint, :cfsprint, :color, :colorall}
 
-id = (...) -> ...
+id  = (...) -> ...
+rec = -> rec
 -- Will return `id` functions if `bool` is false.
 return (bool) -> bool and MODULE or {
-  mapM:           id
-  doInstant:      id
-  finspect:       id
-  fprint:         id
-  filterKeywords: id
-  fsprint:        id
-  cfsprint:       id
-  color:          id
-  colorall:       setmetatable {}, __call: id, __index: => id
+  mapM:           rec
+  doInstant:      rec
+  finspect:       rec
+  fprint:         rec
+  filterKeywords: rec
+  fsprint:        rec
+  cfsprint:       rec
+  color:          rec
+  colorall:       setmetatable {}, __call: rec, __index: => rec
 }

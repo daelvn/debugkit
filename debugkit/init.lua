@@ -130,20 +130,24 @@ local id
 id = function(...)
   return ...
 end
+local rec
+rec = function()
+  return rec
+end
 return function(bool)
   return bool and MODULE or {
-    mapM = id,
-    doInstant = id,
-    finspect = id,
-    fprint = id,
-    filterKeywords = id,
-    fsprint = id,
-    cfsprint = id,
-    color = id,
+    mapM = rec,
+    doInstant = rec,
+    finspect = rec,
+    fprint = rec,
+    filterKeywords = rec,
+    fsprint = rec,
+    cfsprint = rec,
+    color = rec,
     colorall = setmetatable({ }, {
-      __call = id,
+      __call = rec,
       __index = function(self)
-        return id
+        return rec
       end
     })
   }
