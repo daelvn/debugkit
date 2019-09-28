@@ -54,7 +54,7 @@ cfsprint = (f) -> (keywords) -> fsprint keywords, filterKeywords, f
 c      = require "ansicolors"
 _color = (t) -> (x) ->
   for k, v in pairs t do
-    x = x\gsub k, "%%{#{v}}#{k}%%{reset}"
+    x = x\gsub k, "%%{#{v}}#{k}%%{reset}" if "string" == type x
   c x
 --- Custom color formatting function over ansicolors. **Curried function.**
 -- @tparam table format A table where the keys are substrings to color, and values are the format.

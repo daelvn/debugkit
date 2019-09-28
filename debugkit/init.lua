@@ -95,7 +95,9 @@ local _color
 _color = function(t)
   return function(x)
     for k, v in pairs(t) do
-      x = x:gsub(k, "%%{" .. tostring(v) .. "}" .. tostring(k) .. "%%{reset}")
+      if "string" == type(x) then
+        x = x:gsub(k, "%%{" .. tostring(v) .. "}" .. tostring(k) .. "%%{reset}")
+      end
     end
     return c(x)
   end
