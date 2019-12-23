@@ -1,0 +1,40 @@
+site_name: debugkit
+repo_name: 'daelvn/debugkit'
+repo_url:  'https://github.com/daelvn/debugkit'
+
+theme:
+  name: material
+  palette:
+    primary: 'Indigo'
+    accent: 'Indigo'
+  logo:
+    icon: 'bug_report'
+  feature:
+    tabs: true
+
+markdown_extensions:
+  - admonition
+  - meta
+  - codehilite
+  - pymdownx.superfences
+  - pymdownx.inlinehilite
+  - toc:
+      permalink: true
+
+extra:
+  social:
+    - type: 'github'
+      link: 'https://github.com/daelvn'
+    - type: 'twitter'
+      link: 'https://queer.party/@daelvn'
+
+nav:
+  - Home: 'index.md'
+  - Modules:
+    - 'debugkit.inspect': 'module/inspect.md'
+    - Log:
+      - 'debugkit.log.init': 'module/log/init.md'
+      - 'debugkit.log.loggers': 'module/log/loggers.md'
+      - 'debugkit.log.sinks': 'module/log/sinks.md'
+  - Manual:
+    - 'Basics': 'manual/basics.md'
