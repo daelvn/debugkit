@@ -1,4 +1,4 @@
-package = "debugkit"
+package = "debugkit-extra"
 version = "2.0-1"
 source  = {
   url = "git://github.com/daelvn/debugkit",
