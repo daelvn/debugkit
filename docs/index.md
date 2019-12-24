@@ -48,6 +48,7 @@ some reason, do:
 ```
 $ luarocks install filekit
 $ luarocks install guardia
+$ luarocks install ansikit
 ```
 
 And if you want to use the JSON sink in `debugkit.log.sinks`, install any of
@@ -56,6 +57,8 @@ And if you want to use the JSON sink in `debugkit.log.sinks`, install any of
 
 If you want to use the colorized `inspect` function in `debugkit.inspect`, you
 will need `lrexlib-pcre2`. The strings are not precisely easy to color without them.
+
+You can install optional dependencies using the metapackage `debugkit-extra`.
 
 The documentation is availiable at https://git.daelvn.ga/debugkit.
 
