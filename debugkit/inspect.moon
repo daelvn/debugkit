@@ -19,6 +19,6 @@ colorize = (str) ->
     str = \gsub "  ",                                                    style.faint.white  "| "
   str
 
-i = setmetatable {KEY: inspect.KEY, METATABLE: inspect.METATABLE}, __call: (v, s) -> colorize inspect v, s
+i = setmetatable {KEY: inspect.KEY, METATABLE: inspect.METATABLE}, __call: (v, s) => colorize inspect v, s
 
 { inspect: i }

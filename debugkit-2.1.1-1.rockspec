@@ -1,8 +1,8 @@
 package = "debugkit"
-version = "2.1-1"
+version = "2.1.1-1"
 source  = {
   url = "git://github.com/daelvn/debugkit",
-  tag = "v2.1"
+  tag = "v2.1.1"
 }
 description = {
   summary = "Print debugging made easier.",
