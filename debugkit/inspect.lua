@@ -22,7 +22,7 @@ local i = setmetatable({
   KEY = inspect.KEY,
   METATABLE = inspect.METATABLE
 }, {
-  __call = function(v, s)
+  __call = function(self, v, s)
     return colorize(inspect(v, s))
   end
 })
