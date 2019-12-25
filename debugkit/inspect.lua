@@ -18,10 +18,14 @@ colorize = function(str)
   end
   return str
 end
-local i
-i = function(v, s)
-  return colorize(inspect(v, s))
-end
+local i = setmetatable({
+  KEY = inspect.KEY,
+  METATABLE = inspect.METATABLE
+}, {
+  __call = function(v, s)
+    return colorize(inspect(v, s))
+  end
+})
 return {
   inspect = i
 }
